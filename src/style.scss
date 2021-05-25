@@ -1,6 +1,6 @@
-@use "custom";
-@use "~boostrap/scss/bootstrap";
+$primary-color: whitesmoke;
 
 body {
-    background-color: whitesmoke;
+    background-color: $whitesmoke;
 }
+

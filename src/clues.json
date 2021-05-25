@@ -1,0 +1,46 @@
+[
+    {
+        "id": 0,
+        "title": "First clue",
+        "description": "First clue",
+        "audioUrl": "assets/g01.png",
+        "graphicUrl": "assets/a01.mp3",
+        "coordinates": {
+            "latitude": 28.128082459368077,
+            "logitidue": -15.446670316702773
+        }
+    },
+    {
+        "id": 1,
+        "title": "Second clue",
+        "description": "Second clue",
+        "audioUrl": "assets/g02.png",
+        "graphicUrl": "assets/a02.mp3",
+        "coordinates": {
+            "latitude": 28.12874773424648,
+            "logitidue": -15.44735964440962
+        }
+    },
+    {
+        "id": 2,
+        "title": "Third clue",
+        "description": "Third clue",
+        "audioUrl": "assets/g03.png",
+        "graphicUrl": "assets/a03.mp3",
+        "coordinates": {
+            "latitude": 28.129059968500144,
+            "logitidue": -15.446990170118607
+        }
+    },
+    {
+        "id": 3,
+        "title": "Fourth clue",
+        "description": "Fourth clue",
+        "audioUrl": "assets/g04.png",
+        "graphicUrl": "assets/a04.mp3",
+        "coordinates": {
+            "latitude": 28.128181305782153,
+            "logitidue": -15.446085052579454
+        }
+    }
+]
