@@ -2,13 +2,10 @@ import React from "react"
 import ReactDOM from "react-dom"
 import App from "./App.js"
 import "./style.scss"
+import {hasGeolocation} from "../helper/helper.js"
 
-ReactDOM.render(<App />, document.getElementById("root"))
-
-const geo = navigator.geolocation
-
-if (!geo) {
-    console.log("geolocation no available!")
+if (hasGeolocation()) {
+    ReactDOM.render(<App />, document.getElementById("root"))
 } else {
-    console.log(geo.getCurrentPosition(() => console.log("It's done!")))
+    ReactDOM.render(<h2>Damn it</h2>, document.getElementById("root"))
 }

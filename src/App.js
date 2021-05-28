@@ -1,16 +1,10 @@
-import React, { useState } from "react"
+import React from "react"
+import Clue from "./Clue.js"
+import "./style.scss"
 
 function App() {
-    const [message, sayHello] = useState("Hello!")
-    function handleGreeting() {
-        sayHello("Good Bye!")
-    }
-
     return (
-        <div>
-            <p>{message}</p>
-            <button onClick={handleGreeting}>Comenzar</button>
-        </div>
+        <Clue />
     )
 }
 
