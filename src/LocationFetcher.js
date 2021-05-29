@@ -5,9 +5,9 @@ class LocationFetcher extends Component {
         super(props)
         this.state = {
             isLoading: false,
-            isEnabled: false,
-            latitude: 0,
-            longitude: 0
+            isAvailable: false,
+            position: null,
+            err: null
         }
     }
 
@@ -17,16 +17,32 @@ class LocationFetcher extends Component {
         if ("geolocation" in window.navigator) {
             navigator.geolocation.getCurrentPosition(pos => {
                 this.setState({
-                    latitude: pos.coords.latitude,
-                    longitude: pos.coords.longitude,
-                    isEnabled: true,
-                    isLoading: false
+                    position: pos,
+                    isAvailable: true,
+                    isLoading: false,
+                })
+            }, err => {
+                this.setState({
+                    isLoading: false,
+                    err: err
                 })
             })
         }
     }
 
-    render = () => (this.state.isLoading ? <div>Loading...</div> : <div>{this.state.latitude}</div> )
+    render = () => {
+        if (!this.state.isLoading) {
+            if (this.state.isAvailable) {
+                return (this.state.isLoading ? <div>Loading...</div> : <div>{this.state.position.coords.latitude}</div> )
+            }
+            
+            return (
+                <p>Gelocation not available</p>
+            )
+        }
+
+        return (<p>Loading...</p>)
+    }
 }
 
 export default LocationFetcher
