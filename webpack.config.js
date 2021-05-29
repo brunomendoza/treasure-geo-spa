@@ -6,7 +6,10 @@ module.exports = {
     mode: "development",
     devtool: "inline-source-map",
     devServer: {
-        contentBase: "./dist",
+        contentBase: [
+            path.join(__dirname, "public"),
+            path.join(__dirname, "assets")
+        ],
         port: 9000,
         hot: true
     },
@@ -32,7 +35,7 @@ module.exports = {
         template: "./src/index.html"
     })],
     output: {
-        path: path.resolve(__dirname, "dist"),
+        path: path.resolve(__dirname, "public"),
         filename: "bundle.js"
     }
 }
