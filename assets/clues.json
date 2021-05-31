@@ -3,8 +3,8 @@
         "id": 0,
         "title": "First clue",
         "description": "First clue",
-        "audioUrl": "assets/aud01.mp3",
-        "graphicUrl": "assets/pic01.png",
+        "audioUrl": "./aud01.mp3",
+        "graphicUrl": "./pic01.jpg",
         "graphicAlt": "First clue",
         "coordinates": {
             "latitude": 28.128082459368077,
@@ -15,8 +15,8 @@
         "id": 1,
         "title": "Second clue",
         "description": "Second clue",
-        "audioUrl": "assets/aud02.mp3",
-        "graphicUrl": "assets/pic02.png",
+        "audioUrl": "./aud02.mp3",
+        "graphicUrl": "./pic02.jpg",
         "graphicAlt": "Second clue",
         "coordinates": {
             "latitude": 28.12874773424648,
@@ -27,8 +27,8 @@
         "id": 2,
         "title": "Third clue",
         "description": "Third clue",
-        "audioUrl": "assets/aud03.mp3",
-        "graphicUrl": "assets/pic03.png",
+        "audioUrl": "./aud03.mp3",
+        "graphicUrl": "./pic03.jpg",
         "graphicAlt": "Third clue",
         "coordinates": {
             "latitude": 28.129059968500144,
@@ -39,8 +39,8 @@
         "id": 3,
         "title": "Fourth clue",
         "description": "Fourth clue",
-        "audioUrl": "assets/aud04.mp3",
-        "graphicUrl": "assets/pic04.png",
+        "audioUrl": "./aud04.mp3",
+        "graphicUrl": "./pic04.jpg",
         "graphicAlt": "Fourth clue",
         "coordinates": {
             "latitude": 28.128181305782153,
