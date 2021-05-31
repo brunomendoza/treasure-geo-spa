@@ -16,8 +16,8 @@ class DataFetcher extends Component {
 
         fetch(this.props.url)
             .then(res => res.json())
-            .then(data => {
-                for (const clue of data) {
+            .then(clues => {
+                for (const clue of clues) {
                     if (clue.id === this.state.id) {
                         this.setState({
                             isLoading: false,
