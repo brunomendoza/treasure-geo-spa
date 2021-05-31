@@ -2,7 +2,7 @@ import React from "react"
 import ReactDOM from "react-dom"
 import App from "./App.js"
 import "./style.scss"
-import {hasGeolocation} from "../helper/helper.js"
+import {hasGeolocation} from "./helper/helper.js"
 
 if (hasGeolocation()) {
     ReactDOM.render(<App />, document.getElementById("root"))

@@ -1,47 +1,53 @@
 import React, { Component } from "react"
+import { getCurrentPosition } from "./helper/helper"
 
 class LocationFetcher extends Component {
     constructor(props) {
         super(props)
         this.state = {
             isLoading: false,
-            isAvailable: false,
             position: null,
-            err: null
+            error: null,
         }
     }
 
     componentDidMount = () => {
         this.setState({isLoading: true})
 
-        if ("geolocation" in window.navigator) {
-            navigator.geolocation.getCurrentPosition(pos => {
-                this.setState({
-                    position: pos,
-                    isAvailable: true,
-                    isLoading: false,
-                })
-            }, err => {
-                this.setState({
-                    isLoading: false,
-                    err: err
-                })
+        getCurrentPosition({
+            enableHighAccuracy: true,
+            setTimeout: 10000,
+            maximumAge: 0
+        })
+        .then(position => this.setState({
+            position,
+            isLoading: false
+        }))
+        .catch(error => {
+            this.setState({
+                error,
+                isLoading: false
             })
-        }
+        })
     }
 
     render = () => {
-        if (!this.state.isLoading) {
-            if (this.state.isAvailable) {
-                return (this.state.isLoading ? <div>Loading...</div> : <div>{this.state.position.coords.latitude}</div> )
-            }
-            
-            return (
-                <p>Gelocation not available</p>
-            )
-        }
+        const {isLoading, position, error} = this.state
+        return (
+            this.props.render(isLoading, position, error)
+        )
 
-        return (<p>Loading...</p>)
+        // const {isLoading, position} = this.state
+
+        // if(isLoading) {
+        //     return(<p>Loading...</p>)
+        // } else {
+        //     if(position === null) {
+        //         return (<p>No data</p>)
+        //     }
+         
+        //     return (<p>{position.coords.latitude}</p>)
+        // }
     }
 }
 

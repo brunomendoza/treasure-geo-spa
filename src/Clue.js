@@ -1,24 +1,30 @@
-import React from "react"
+import React, { useState } from "react"
 import DataFetcher from "./DataFetcher.js"
 import Coordinates from "./Coordinates.js"
 
 function Clue(props) {
     return (
-        <DataFetcher url="./clues.json" render={(isLoading, data) => {
+        <DataFetcher url="./clues.json" render={(isLoading, clue, handleClick) => {
             if (isLoading) {
                 return (
-                    <p>Cargando</p>
+                    <p>Loading data...</p>
                 )
             } else {
-                console.log(data)
+                if (clue === null) {
+                    return (
+                        <p>Data not available</p>
+                    )
+                }
+                
                 return (
                     <div className="clue">
-                        {/* <img className="clue__image--top" src={data.graphicUrl} alt={data.graphicAlt} />
+                        <img className="clue__image--top" src={clue.graphicUrl} alt={clue.graphicAlt} />
                         <div className="clue__body">
-                            <h2 className="clue__title">{data.title}</h2>
-                            <p className="clue__description">{props.description}</p>
-                            <Coordinates latitude={props.coordinates.latitude} longitude={props.coordinates.logitude} />
-                        </div> */}
+                            <h2 className="clue__title">{clue.title}</h2>
+                            <p className="clue__description">{clue.description}</p>
+                            <Coordinates />
+                            <button onClick={handleClick}>Test</button>
+                        </div>
                     </div>
                 )
             }

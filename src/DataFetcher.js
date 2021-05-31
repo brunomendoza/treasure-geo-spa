@@ -5,25 +5,62 @@ class DataFetcher extends Component {
         super(props)
         this.state = {
             isLoading: false,
-            data: null
+            clue: null,
+            error: null,
+            id: 0
         }
-        this.componentDidMount = this.componentDidMount.bind(this)
     }
 
     componentDidMount() {
-        this.setState(state => {isLoading: true})
+        this.setState({isLoading: true})
+
         fetch(this.props.url)
             .then(res => res.json())
-            .then(data => this.setState(state => ({
+            .then(data => {
+                for (const clue of data) {
+                    if (clue.id === this.state.id) {
+                        this.setState({
+                            isLoading: false,
+                            clue
+                        })
+                    }
+                }
+            })
+            .catch(error => this.setState({
                 isLoading: false,
-                data: data
-            })))
-            .catch(err => console.error(err.message))
+                error
+            }))
+    }
+
+    handleClick = (event) => {
+        this.setState({isLoading: true})
+        this.setState(state => ({
+            id: state.id + 1
+        }))
+
+        fetch(this.props.url)
+            .then(res => res.json())
+            .then(clues => {
+                for (const clue of clues) {
+                    if (clue.id === this.state.id) {
+                        this.setState({
+                            isLoading: false,
+                            clue
+                        })
+                    }
+                }
+            })
+            .catch(error => this.setState({
+                isLoading: false,
+                error
+            }))
     }
 
     render() {
+        const {isLoading, clue} = this.state
+
         return (
-            this.props.render(this.state.isLoading, this.state.data)
+            this.props.render(isLoading, clue, this.handleClick)
         )
     }
 }
