@@ -20,8 +20,9 @@ function Coordinates() {
 
                 return (
                     <div className="clue__coordinates">
-                        <h4>Current Location</h4>
-                        <p><span className="material-icons">location_on</span> {position.coords.latitude}, {position.coords.longitude}</p>
+                        <h3><span className="material-icons">location_on</span>&nbsp;Your Location</h3>
+                        <p>lat: {position.coords.latitude}</p>
+                        <p>lon: {position.coords.longitude}</p>
                     </div>
                 )
             }
