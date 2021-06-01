@@ -20,11 +20,14 @@ function Clue(props) {
                     <div className="clue">
                         <div className="clue__heading">
                             <Recording url={clue.audioUrl}/>
+                            <h2 className="clue__title">{clue.title}</h2>
                             <img className="clue__image--top" src={clue.graphicUrl} alt={clue.graphicAlt} />
                         </div>
                         <div className="clue__body">
-                            <h2 className="clue__title">{clue.title}</h2>
-                            <p className="clue__description">{clue.description}</p>
+                            <div className="clue__description">
+                                <h3>Description</h3>
+                                <p>{clue.description}</p>
+                            </div>
                             <Coordinates />
                             <button onClick={handleClick}>Test</button>
                         </div>

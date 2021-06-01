@@ -2,7 +2,7 @@ $primary-color: whitesmoke;
 $accent-color: crimson;
 
 @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400&display=swap');
 
 body {
     background-color: $primary-color;
@@ -14,17 +14,29 @@ body {
     margin: 0 auto;
     display: flex;
     flex-flow: column nowrap;
-
+    
     .clue__heading {
         position: relative;
+        color: $primary-color;
+        
+        .clue__title {
+            background-color: $accent-color;
+            padding: 1rem;
+            position: absolute;
+            margin: 0;
+            top: 1rem;
+            left: 1rem;
+            font-size: 2rem;
+        }
 
         .clue__speaker {
             position: absolute;
+            margin: 0;
             bottom: 1rem;
             right: 1rem;
 
             span {
-                color: $primary-color;
+                cursor: pointer;
                 font-size: 2rem;
             }
         }
@@ -35,16 +47,22 @@ body {
     }
 
     .clue__body {
-        .clue__title {
-
-        }
 
         .clue__description {
+            h3 {
+                font-weight: 400;
+                font-size: 1.15rem;
+            }
 
+            p {
+                font-weight: 300;
+            }
         }
 
-        .clue_coordinates {
-
+        .clue__coordinates {
+            h3 {
+                font-weight: 400;
+            }
         }
     }
 }
