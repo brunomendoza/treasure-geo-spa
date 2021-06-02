@@ -25,7 +25,7 @@ function Clue(props) {
                         </div>
                         <div className="clue__body">
                             <div className="clue__description">
-                                <h3>Description</h3>
+                                <h3><span className="material-icons">article</span>Description</h3>
                                 <p>{clue.description}</p>
                             </div>
                             <Coordinates />
