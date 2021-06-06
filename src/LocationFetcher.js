@@ -1,53 +1,40 @@
 import React, { Component } from "react"
-import { getCurrentPosition } from "./helper/helper"
+import Spot from "./helper/Spot"
+import Loading from "./loading/Loading"
 
 class LocationFetcher extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            isLoading: false,
-            position: null,
-            error: null,
+            isLoading: true,
         }
+        this.spot = new Spot
     }
 
     componentDidMount = () => {
-        this.setState({isLoading: true})
+        this.spot.subscribe(this.handlePosition)
+        this.spot.watchPosition()
+    }
 
-        getCurrentPosition({
-            enableHighAccuracy: true,
-            setTimeout: 10000,
-            maximumAge: 0
-        })
-        .then(position => this.setState({
-            position,
-            isLoading: false
-        }))
-        .catch(error => {
-            this.setState({
-                error,
-                isLoading: false
-            })
+    handlePosition = coords => {
+        const {lon, lat}  = coords
+         
+        this.setState({
+            isLoading: false,
+            coords: {
+                lat,
+                lon
+            }
         })
     }
 
     render = () => {
-        const {isLoading, position, error} = this.state
+        const {isLoading, coords} = this.state
+        const { clues } = this.props
+        
         return (
-            this.props.render(isLoading, position, error)
+            isLoading ? <Loading title="Location" /> : this.props.render(clues, coords)
         )
-
-        // const {isLoading, position} = this.state
-
-        // if(isLoading) {
-        //     return(<p>Loading...</p>)
-        // } else {
-        //     if(position === null) {
-        //         return (<p>No data</p>)
-        //     }
-         
-        //     return (<p>{position.coords.latitude}</p>)
-        // }
     }
 }
 

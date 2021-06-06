@@ -12,4 +12,9 @@ function sleep(timeout) {
     return new Promise(resolve => setTimeout(resolve, timeout))
 }
 
-export { hasGeolocation, getCurrentPosition, sleep }
+function areNear(a, b, threshold) {
+    return Math.abs(a.lon - b.lon) < threshold
+    && Math.abs(a.lat - b.lat) < threshold
+}
+
+export { hasGeolocation, getCurrentPosition, sleep, areNear }

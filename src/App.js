@@ -4,7 +4,9 @@ import "./style.scss"
 
 function App() {
     return (
-        <Clue />
+        <div className="clue__wrapper">
+            <Clue />
+        </div>
     )
 }
 

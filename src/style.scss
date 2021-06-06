@@ -1,10 +1,15 @@
-$primary-color: whitesmoke;
-$accent-color: crimson;
+@use 'loading/loading';
 
 @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400&display=swap');
 
+$primary-color: whitesmoke;
+$accent-color: crimson;
+
+
 body {
+    margin: 0;
+    padding: 0;
     background-color: $primary-color;
     font-family: 'Lato', sans-serif;
     font-size: 16px;
@@ -17,9 +22,21 @@ h1, h2, h3, h4, h5, h6 {
     padding: 0;
 }
 
-.clue {
+.spinner__wrapper {
+    height: 100vh;
+    display:flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    background-color: $accent-color;
+}
+
+.clue__wrapper {
     max-width: 360px;
     margin: 0 auto;
+}
+
+.clue {
     display: flex;
     flex-flow: column nowrap;
     

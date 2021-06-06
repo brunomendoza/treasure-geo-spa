@@ -6,9 +6,9 @@
         "audioUrl": "./aud01.mp3",
         "graphicUrl": "./pic01.jpg",
         "graphicAlt": "First clue",
-        "coordinates": {
-            "latitude": 28.128082459368077,
-            "logitidue": -15.446670316702773
+        "coords": {
+            "lat": 28.128082459368077,
+            "lon": -15.446670316702773
         }
     },
     {
@@ -18,9 +18,9 @@
         "audioUrl": "./aud02.mp3",
         "graphicUrl": "./pic02.jpg",
         "graphicAlt": "Second clue",
-        "coordinates": {
-            "latitude": 28.12874773424648,
-            "logitidue": -15.44735964440962
+        "coords": {
+            "lat": 28.12874773424648,
+            "lon": -15.44735964440962
         }
     },
     {
@@ -30,9 +30,9 @@
         "audioUrl": "./aud03.mp3",
         "graphicUrl": "./pic03.jpg",
         "graphicAlt": "Third clue",
-        "coordinates": {
-            "latitude": 28.129059968500144,
-            "logitidue": -15.446990170118607
+        "coords": {
+            "lat": 28.129059968500144,
+            "lon": -15.446990170118607
         }
     },
     {
@@ -42,9 +42,9 @@
         "audioUrl": "./aud04.mp3",
         "graphicUrl": "./pic04.jpg",
         "graphicAlt": "Fourth clue",
-        "coordinates": {
-            "latitude": 28.128181305782153,
-            "logitidue": -15.446085052579454
+        "coords": {
+            "lat": 28.128181305782153,
+            "lon": -15.446085052579454
         }
     }
 ]
